@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <h1>Registratioin Form</h1>
+        </div>
+        <div class='firstlastNames'>
+            <div>
+                <input class="firstName" type='text' placeholder='First Name' />
+            </div>
+            <div>
+                <input class="lastName" type='text' placeholder='Last Name' />
+            </div>
+        </div>
+        <button class="btnConfirmNames" onclick="confirmNames()" >Confirm</button>
+        <div>
+            <h3 class="showNames">test</h3>
+        </div>
+
+        <div>
+            <h2>How many vehicles do you want to buy?</h2>
+        </div>
+        <div class='btnsTotalVehicles'>
+            <div>
+                <button onclick="setVehiclesAmount('+')">+</button>
+            </div>
+            <div>
+                <button onclick="setVehiclesAmount('-')">-</button>
+            </div>
+        </div>
+        <div class='vehicles'>
+
+            <div class="vehicle">
+                <div>
+                    <h2>What color of vehicle would you prefer for vehicle 1</h2>
+                </div>
+                <div class='colorButtons'>
+                    <div>
+                        <button>green</button>
+                    </div>
+                    <div>
+                        <button>grey</button>
+                    </div>
+                    <div>
+                        <button>yellow</button>
+                    </div>
+                    <div>
+                        <button>brown</button>
+                    </div>
+                </div>
+                <div>
+                    <h2>What is the size of the car?</h2>
+                </div>
+                <div class='sizeVehicle'>
+                    <div>
+                        <p>Length</p>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Length" />
+                    </div>
+                    <div>
+                        <p>Width</p>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="width" />
+                    </div>
+                </div>
+                <div class='vehicleSize'>
+                    <p>Car size & color</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- 
+    document.getElementsByClassName('test')[0]
+    document.getElementById("demo").innerHTML
+    document.createElement("LI")
+    newItem.appendChild(textnode);
+    document.getElementById("myH1").style.color 
+-->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+
+p{
+  margin:0;
+  padding:0;
+}
+
+.main{
+  width: 80%;
+  min-height: 5%;
+  background-color: rgb(247, 255, 220);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 1rem;
+}
+
+.firstlastNames{display: flex;flex-direction: row;}
+
+.btnsTotalVehicles{display: flex;flex-direction: row;}
+
+.vehicles{display: flex;flex-direction: column;}
+
+.vehicle{display: flex;flex-direction: column;background: #cef3cf;margin-bottom: 0.2em;margin-top: 1em;}
+
+.colorButtons{display: flex;flex-direction: row;justify-content: space-around;max-width: 400px;}
+
+.sizeVehicle{display: flex;flex-direction: row;justify-content: space-between;max-width: 400px;}
+
+.vehicleSize{
+  width: 200px;
+  height: 100px;
+  background: green;
+  margin: 2em;
+}
+.vehicleSize > * {
+  margin: auto;
+}
+.sizeVehicle > * {
+  margin: 0.3em
+}
+
+.firstlastNames > * {
+  margin: 0.4em;
+}
+
+.btnsTotalVehicles > * {
+  margin: 0.2em;
+}
