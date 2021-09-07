@@ -22,45 +22,85 @@ function confirmNames(){
     showNames.innerHTML = result;
 }
 
+function removeVehicle(){
+    console.log("🚀 ~ file: script.js ~ line 27 ~ removeVehicle ~ totalVehicles", totalVehicles);
+    let vehicles = document.getElementsByClassName('vehicle');
+    let lastVehicle = vehicles[vehicles.length - 1];
+    (totalVehicles > 0) && lastVehicle.remove();
+    (totalVehicles > 0) && (totalVehicles -= 1)
+}
 
-function setVehiclesAmount(val){
-    val === '+' && (totalVehicles += 1) || (totalVehicles > 0 && (totalVehicles -= 1));
-    /**** Create all nodes ****/
+function addVehicle(){
+    totalVehicles += 1;
+    /**** Create Parent div node ****/
     let vehicleDiv = document.createElement('div'); // Add main vehicle div
-    let colorDivH2 = document.createElement('div'); 
-    let colorButtonsDiv = document.createElement('div');
-    let h2DivSizecar = document.createElement('div');
-    let sizeVehicleDiv = document.createElement('div');
-    let sizeVehicleDivLength = document.createElement('div');
-    let sizeVehicleDivInputLength = document.createElement('div');
-    let sizeVehicleDivInputWidth = document.createElement('div');
-    let sizeVehicleDivWidth = document.createElement('div');
-    let vehicleSizeDiv = document.createElement('div');
-    let vehicleSizeP = document.createElement('p');
-    let sizeVehicleDivWidthP = document.createElement('p');
-    let sizeVehicleDivLengthP = document.createElement('p');
-    let colorH2 = document.createElement('h2');
-    let h2Sizecar = document.createElement('h2');
-    
+    vehicleDiv.setAttribute('class', 'vehicle')
     // Append new vehicle div to vehicles container
     document.getElementsByClassName('vehicles')[0].appendChild(vehicleDiv);
 
     // colorDivH2 
+    let colorH2 = document.createElement('h2');
+    let colorDivH2 = document.createElement('div'); 
     colorH2.innerHTML = `What color of vehicle would you prefer for vehicle ${totalVehicles}`;
     colorDivH2.appendChild(colorH2);
     vehicleDiv.appendChild(colorDivH2);
+
     // colorButtonsDiv
-    colorButtonsDiv.setAttribute('class', 'colorButtons');
     const colorButtons = ['green', 'grey', 'yellow', 'brown'];
+    let colorButtonsDiv = document.createElement('div');
+    colorButtonsDiv.setAttribute('class', 'colorButtons');
     vehicleDiv.appendChild(colorButtonsDiv);
-    console.log("🚀 ~ file: script.js ~ line 54 ~ setVehiclesAmount ~ vehicleDiv", vehicleDiv);
     for (let i = 0; i < colorButtons.length; i++) {
-    console.log("🚀 ~ file: script.js ~ line 55 ~ setVehiclesAmount ~ colorButtonsDiv", colorButtonsDiv);
         let colorButton = document.createElement('button');
         colorButton.innerHTML = colorButtons[i];
         let colorButtonDiv = document.createElement('div');
         colorButtonDiv.appendChild(colorButton);
         colorButtonsDiv.appendChild(colorButtonDiv);
-    };     
+    };
+
+    // h2 size car
+    let h2Sizecar = document.createElement('h2');
+    let h2DivSizecar = document.createElement('div');
+    h2Sizecar.innerHTML = 'What is the size of the car?';
+    h2DivSizecar.append(h2Sizecar);
+    vehicleDiv.appendChild(h2DivSizecar);
+
+    // Size vehicle
+    let sizeVehicleDiv = document.createElement('div');
+
+    let sizeVehicleDivLength = document.createElement('div');
+    let sizeVehicleDivLengthP = document.createElement('p');
+    sizeVehicleDivLengthP.innerHTML = 'Length';
+    sizeVehicleDivLength.appendChild(sizeVehicleDivLengthP);
+
+    let sizeVehicleDivWidth = document.createElement('div');
+    let sizeVehicleDivWidthP = document.createElement('p');
+    sizeVehicleDivWidthP.innerHTML = 'Width';
+    sizeVehicleDivWidth.appendChild(sizeVehicleDivWidthP);
+
+    let sizeVehicleInputLength = document.createElement('input');
+    sizeVehicleInputLength.setAttribute('type', 'text');
+    let sizeVehicleInputLengthDiv = document.createElement('div');
+    sizeVehicleInputLengthDiv.appendChild(sizeVehicleInputLength);
+
+    let sizeVehicleInputWidth = document.createElement('input');
+    sizeVehicleInputWidth.setAttribute('type', 'text');
+    let sizeVehicleInputWidthDiv = document.createElement('div');
+    sizeVehicleInputWidthDiv.appendChild(sizeVehicleInputWidth);
+
+    sizeVehicleDiv.appendChild(sizeVehicleDivLength);
+    sizeVehicleDiv.appendChild(sizeVehicleInputLengthDiv);
+    sizeVehicleDiv.appendChild(sizeVehicleDivWidth);
+    sizeVehicleDiv.appendChild(sizeVehicleInputWidthDiv);
+    sizeVehicleDiv.setAttribute('class', 'sizeVehicle');
+    vehicleDiv.appendChild(sizeVehicleDiv);
+
+    // Vehicle Size
+    let vehicleSizeDiv = document.createElement('div');
+    vehicleSizeDiv.setAttribute('class', 'vehicleSize');
+    let vehicleSizeP = document.createElement('p');
+    vehicleSizeP.innerHTML = 'Car size & color';
+    vehicleSizeDiv.appendChild(vehicleSizeP);
+    vehicleDiv.appendChild(vehicleSizeDiv);
     
 }
