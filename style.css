@@ -29,7 +29,7 @@ p{
 .vehicleSize{
   width: 200px;
   height: 100px;
-  background: green;
+  background: grey;
   margin: 2em;
 }
 .vehicleSize > * {
